@@ -2,21 +2,21 @@ import lodash from "lodash";
 import { URL } from "url";
 import FileUtils from "utils/FileUtils";
 import PuppeteerUtils from "utils/PuppeteerUtils";
-import { ACOES_TESTE } from "./acoes";
+import ACOES from "./acoes";
 
 //===================================
 
 const PUPPETER_PARAMS = { headless: true };
 const DIR_ARQUIVO = `./files/fis.csv`;
 const ORDER_BY = {
-  col: ["converterPorcentagem", "risco"],
+  col: ["cotacao_por_rendimento", "risco"],
   sort: ["desc", "asc"],
 };
 const LOG_CRIADO_A_CADA_BATCH: number = 10;
 
 (async () => {
-  // await baixarPadraoDOUXml(ACOES);
-  await baixarPadraoDOUXml(ACOES_TESTE);
+  await baixarPadraoDOUXml(ACOES);
+  // await baixarPadraoDOUXml(ACOES_TESTE);
 })();
 
 //===================================
@@ -67,7 +67,7 @@ async function baixarPadraoDOUXml(acoes): Promise<void> {
       acao,
       cotacao,
       rendimento,
-      risco,
+      risco: risco || 99,
       cotacao_por_rendimento,
       razaoSocial,
       setor,
