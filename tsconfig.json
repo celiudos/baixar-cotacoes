@@ -1,0 +1,33 @@
+{
+  "extends": "ts-node/node16/tsconfig.json",
+  "compilerOptions": {
+    "jsx": "preserve",
+    "baseUrl": ".",
+    "target": "ES2021",
+    "lib": ["es6", "dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    // "noImplicitAny": true,
+    "esModuleInterop": true,
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "noImplicitReturns": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "../iadou-libs/*",
+    "./utils/*"
+  ],
+  "exclude": ["node_modules"],
+  "ts-node": {
+    // Do not forget to `npm i -D tsconfig-paths`
+    "require": ["tsconfig-paths/register"]
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es6": true,
+    "node": true,
+    "jest": true
+    // "es2021": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "extends": [
+    "plugin:react/recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:jsx-a11y/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "prettier",
+    "eslint:recommended"
+  ],
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true // enable linting for jsx files
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+
+  "plugins": ["react", "@typescript-eslint", "prettier"],
+  "rules": {
+    "react/prop-types": 0,
+    // NextJs specific fix: suppress errors for missing 'import React' in files for nextjs
+    "react/react-in-jsx-scope": "off",
+    // NextJs specific fix: allow jsx syntax in js files
+    "react/jsx-filename-extension": [
+      1,
+      { "extensions": [".js", ".jsx", ".ts", ".tsx", ".tsv", ".json"] }
+    ], //should add ".ts" if typescript project
+    "react/display-name": 0
+  }
+}
