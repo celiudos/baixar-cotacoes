@@ -69,9 +69,9 @@ async function baixarPadraoDOUXml(acoes): Promise<void> {
       rendimento,
       risco: risco || 99,
       cotacao_por_rendimento,
-      razaoSocial,
       setor,
       segmento,
+      razaoSocial,
       administrador,
     });
 
