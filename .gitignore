@@ -36,3 +36,4 @@ yarn-error.log*
 # outros
 arquivos-fontes/*
 assets/logo-empresas/*
+files/*
